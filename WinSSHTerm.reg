@@ -1,0 +1,27 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CURRENT_USER\Software\SimonTatham\PuTTY\Sessions\WinSSHTerm]
+
+"Colour0"="131,148,150"
+"Colour1"="196,203,204"
+"Colour2"="0,28,34"
+"Colour3"="0,28,34"
+"Colour4"="0,43,54"
+"Colour5"="238,232,213"
+;; change color 6 & 7 to PuTTY defaults to beable to read everything in htop
+"Colour6"="0,0,0"
+"Colour7"="85,85,85"
+"Colour8"="240,77,81"
+"Colour9"="240,77,81"
+"Colour10"="11,176,94"
+"Colour11"="11,176,94"
+"Colour12"="190,192,103"
+"Colour13"="190,192,103"
+"Colour14"="38,139,210"
+"Colour15"="38,139,210"
+"Colour16"="219,91,152"
+"Colour17"="219,91,152"
+"Colour18"="42,161,152"
+"Colour19"="42,161,152"
+"Colour20"="210,210,210"
+"Colour21"="210,210,210"
