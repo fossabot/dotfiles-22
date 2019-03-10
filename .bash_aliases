@@ -2,9 +2,9 @@
 alias sudo='sudo '
 
 # fix for pip version > 9
-alias pip='python3 -m pip'
-alias pip3='python3 -m pip'
-alias pip2='python2 -m pip'
+alias pip='sudo python3 -m pip'
+alias pip3='sudo python3 -m pip'
+alias pip2='sudo python2 -m pip'
 
 alias python='python3'
 
