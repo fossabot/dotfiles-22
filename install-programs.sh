@@ -1,0 +1,68 @@
+#!/bin/bash
+set -ex
+
+# install all my default programs I like to use
+
+# docker
+sudo curl -sSL https://get.docker.com | sh
+sudo groupadd docker
+sudo usermod -aG docker "${USER}"
+sudo apt install python3-pip
+sudo pip3 install -U docker-compose
+
+# cron
+# expand path
+(crontab -l 2>/dev/null; echo -e "SHELL=/bin/bash\nPATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin")| crontab -
+(sudo crontab -l 2>/dev/null; echo -e "SHELL=/bin/bash\nPATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin")| sudo crontab -
+
+# packages for ddclient
+sudo apt install ddclient perl libdata-validate-ip-perl libjson-any-perl
+mkdir -p "${HOME}"/src
+cd "${HOME}"/src
+git clone https://github.com/ddclient/ddclient.git
+sudo cp ddclient /usr/sbin/
+sudo mkdir -p /etc/ddclient/
+
+# nano 3
+nano=3.2
+
+sudo apt install libncursesw5-dev
+mkdir -p "${HOME}"/src && cd "${HOME}"/src/
+wget https://www.nano-editor.org/dist/v3/nano-${nano}.tar.xz
+tar xf nano-${nano}.tar.xz
+rm -r nano-${nano}.tar.xz
+cd nano-${nano}
+./configure --prefix="${HOME}"/.local/
+make
+make install
+cd "${HOME}"
+
+# gotop
+git clone --depth 1 https://github.com/cjbassi/gotop /tmp/gotop
+/tmp/gotop/scripts/download.sh
+rm /tmp/gotop/scripts/download.sh
+mv gotop "${HOME}"/.local/bin/
+
+# mcfly
+mcfly=0.3.3
+wget https://github.com/cantino/mcfly/releases/download/v${mcfly}/mcfly-v${mcfly}-x86_64-unknown-linux-gnu.tar.gz
+tar xf mcfly-v${mcfly}-x86_64-unknown-linux-gnu.tar.gz
+rm mcfly-v${mcfly}-x86_64-unknown-linux-gnu.tar.gz
+mv mcfly "${HOME}"/.local/bin/
+mv mcfly.bash "${HOME}"/.local/
+tee -a "${HOME}"/.bashrc <<EOF
+
+if [[ -r "${HOME}"/.local/mcfly.bash ]]; then
+  source "${HOME}"/.local/mcfly.bash
+fi
+EOF
+
+# latest rclone
+curl https://rclone.org/install.sh | sudo bash
+
+# random utils
+sudo apt install mailutils tree unzip zip
+
+# reload local bin folder and terminal
+source "${HOME}"/.profile
+source "${HOME}"/.bashrc
