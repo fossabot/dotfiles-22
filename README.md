@@ -1,3 +1,3 @@
 # Sandro's dotfiles
 
-Just my dotfiles backed up before I lose them.
+Just my dotfiles and programs belonging to them backed up before I lose them.
