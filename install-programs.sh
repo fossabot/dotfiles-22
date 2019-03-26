@@ -23,12 +23,12 @@ git clone https://github.com/ddclient/ddclient.git
 sudo cp ddclient /usr/sbin/
 sudo mkdir -p /etc/ddclient/
 
-# nano 3
-nano=3.2
+# nano 4
+nano=4.0
 
 sudo apt install libncursesw5-dev
 mkdir -p "${HOME}"/src && cd "${HOME}"/src/
-wget https://www.nano-editor.org/dist/v3/nano-${nano}.tar.xz
+wget https://www.nano-editor.org/dist/v4/nano-${nano}.tar.xz
 tar xf nano-${nano}.tar.xz
 rm -r nano-${nano}.tar.xz
 cd nano-${nano}
