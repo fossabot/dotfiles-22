@@ -16,7 +16,7 @@ sudo pip3 install -U docker-compose
 (sudo crontab -l 2>/dev/null; echo -e "SHELL=/bin/bash\nPATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin")| sudo crontab -
 
 # packages for ddclient
-sudo apt install ddclient perl libdata-validate-ip-perl libjson-any-perl
+sudo apt install -y ddclient perl libdata-validate-ip-perl libjson-any-perl
 mkdir -p "${HOME}"/src
 cd "${HOME}"/src
 git clone https://github.com/ddclient/ddclient.git
@@ -26,7 +26,7 @@ sudo mkdir -p /etc/ddclient/
 # nano 4
 nano=4.0
 
-sudo apt install libncursesw5-dev
+sudo apt install -y libncursesw5-dev
 mkdir -p "${HOME}"/src && cd "${HOME}"/src/
 wget https://www.nano-editor.org/dist/v4/nano-${nano}.tar.xz
 tar xf nano-${nano}.tar.xz
