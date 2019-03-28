@@ -60,6 +60,14 @@ EOF
 # latest rclone
 curl https://rclone.org/install.sh | sudo bash
 
+# pup
+pup=0.4.0
+sudo apt install -y unzip
+wget https://github.com/ericchiang/pup/releases/download/v${pup}/pup_v${pup}_linux_amd64.zip
+unzip pup_v${pup}_linux_amd64.zip
+rm pup_v${pup}_linux_amd64.zip
+mv pup "${HOME}"/.local/bin/
+
 # rvm
 gpg --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
 \curl -sSL https://get.rvm.io | sudo bash -s stable
