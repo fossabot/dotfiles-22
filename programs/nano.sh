@@ -1,7 +1,7 @@
 #!/bin/bash
 set -ex
 
-nano=4.0
+nano=4.2
 
 sudo apt install -y libncursesw5-dev
 mkdir -p "$HOME/src" && cd "$HOME/src/"
