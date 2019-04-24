@@ -14,5 +14,7 @@ sudo apt install mailutils tree unzip zip
 (sudo crontab -l 2>/dev/null; echo -e "SHELL=/bin/bash\nPATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin")| sudo crontab -
 
 # reload local bin folder and terminal
+# shellcheck disable=1090
 source "$HOME/.profile"
+# shellcheck disable=1090
 source "$HOME/.bashrc"
