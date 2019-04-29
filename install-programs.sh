@@ -7,7 +7,7 @@ for f in programs/*.sh; do
 done
 
 # random utils
-sudo apt install mailutils tree unzip zip
+sudo apt install git gitextras mailutils tree unzip zip
 
 # expand cron path
 (crontab -l 2>/dev/null; echo -e "SHELL=/bin/bash\nPATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin")| crontab -
